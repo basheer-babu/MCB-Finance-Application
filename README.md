@@ -1,6 +1,7 @@
 # FinanceWebApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
+![products](https://user-images.githubusercontent.com/90885137/215973645-4bd9e7c0-5ff2-4a9a-83d9-36727313793d.png)
 
 ## Development server
 
@@ -25,3 +26,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+![products](https://user-images.githubusercontent.com/90885137/215973645-4bd9e7c0-5ff2-4a9a-83d9-36727313793d.png)
+![cheque-book](https://user-images.githubusercontent.com/90885137/215973698-08e4a092-2772-4868-b341-22084b7b87d3.png)
+![cart](https://user-images.githubusercontent.com/90885137/215973702-b770b594-1495-4c8e-8dc1-e97ec98b66f3.png)
+![AddProducts](https://user-images.githubusercontent.com/90885137/215973715-a3890166-c5af-451f-a508-4d0ba8174f33.png)
+![login](https://user-images.githubusercontent.com/90885137/215973720-8b932528-980e-4d33-93b4-fb3b762ba475.png)
+

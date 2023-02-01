@@ -16,23 +16,27 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {}
 
   role: any = localStorage.getItem('role');
+  ro: any = null;
   username: any = localStorage.getItem('username');
   // username: any = "user";
-  location: any = window.location.href.split('/');
-  endPoint: any = this.location.pop();
+  // location: any = window.location.href.split('/');
+  // endPoint: any = this.location.pop();
 
   getCart() {
     return this.cartService.get();
   }
   loginCheck() {
-    
-    return this.endPoint != 'login';
+    this.role = localStorage.getItem('role');
+    this.username = localStorage.getItem('username');
+    if (this.role!= '' && this.role != null) {
+      return true;
+    } else {
+      return false;
+    }
   }
   logout() {
     localStorage.clear();
     this.router.navigate(['login']);
-    setTimeout(() => {window.location.reload()}, 300); 
-
-
+    
   }
 }

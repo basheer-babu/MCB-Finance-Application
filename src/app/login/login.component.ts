@@ -38,7 +38,7 @@ export class LoginComponent {
 
           this.flag = 1;
           this.router.navigate(['products']);
-          setTimeout(() => {window.location.reload()}, 300); 
+          
         },
         (error) => {
           console.error('error', error);

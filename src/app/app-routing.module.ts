@@ -7,7 +7,7 @@ import { CheckbookComponent } from './components/checkbook/checkbook.component';
 import { ProductComponent } from './components/product/product.component';
 import { LoginComponent } from './login/login.component';
 
-const routes: Routes = [{ path: 'login', component: LoginComponent },
+const routes: Routes = [{ path: '', component: LoginComponent },
   { path: 'chequebook', component: CheckbookComponent },
   { path: 'products', component: AllProductsComponent },
   { path: 'cart', component: CartComponent },

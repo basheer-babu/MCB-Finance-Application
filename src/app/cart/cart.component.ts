@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { product } from '../interfaces/product';
 import { CartServiceService } from '../service/cart-service.service';
 
 @Component({
@@ -16,9 +17,9 @@ export class CartComponent {
   }
 
 
-  removeToCard(){
+  removeToCard(pro:product){
     
-    this.cartService.remove(this.product);
+    this.cartService.remove(pro);
     // localStorage.removeItem(this.product.id);
   }
   flag: boolean = false;

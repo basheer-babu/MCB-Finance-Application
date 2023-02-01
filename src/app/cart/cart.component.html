@@ -43,12 +43,12 @@
                         <p class="card-text">{{ product.charge | currency }}</p>
                         <div class="d-flex justify-content-between">
                           <a
-                            (click)="removeToCard()"
+                            (click)="removeToCard(product)"
                             class="btn btn-sm btn-dark"
                             >Remove from cart</a
                           >
 
-                          <a class="btn btn-sm btn-dark">Delete</a>
+                          <!-- <a class="btn btn-sm btn-dark">Delete</a> -->
                         </div>
                       </div>
                     </div>

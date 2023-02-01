@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from './cart/cart.component';
 import { AddProductsComponent } from './add-products/add-products.component';
 import { FormsModule } from '@angular/forms';
+import { CartServiceService } from './service/cart-service.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,HttpClientModule,FormsModule
   ],
-  providers: [],
+  providers: [CartServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

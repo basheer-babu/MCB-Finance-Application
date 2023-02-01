@@ -20,6 +20,7 @@ export class CartServiceService {
   }
   
   remove(product: product) {
+    console.log("product", product);
     let index = this.cart.indexOf(product);
     if (index > -1) { 
       let x=this.cart.splice(index, 1); 

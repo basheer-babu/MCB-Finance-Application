@@ -31,20 +31,19 @@ export class ProductComponent {
   flag: any = 0;
   deleteProduct() {
     this.flag = 0;
-    let token: any = localStorage.getItem('token');
-    let header = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+    // let token: any = localStorage.getItem('token');
+    let header = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'));
     this.httpClient
       .delete('http://localhost:9191/api/v1/delete/' + this.product.id, {
         headers: header,
       })
       .subscribe(
         (res) => {
-          console.log(res);
-
-          this.flag = 1;
+            console.log(res);
+            
           setTimeout(() => {
             window.location.reload();
-          }, 300);
+          }, 2000);
         },
         (error) => {
           console.error('error', error);

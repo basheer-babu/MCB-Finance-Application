@@ -1,0 +1,16 @@
+.my-element {
+    margin-top: 15vh; /* Adds 5 times the font size to the top margin */
+  }
+
+  .card{
+    height: 60vh;
+    width: auto;
+    
+  }
+  .line{
+    width: 100%;
+    /* height: 47px; */
+    border-bottom: 8px solid #FFFF;
+
+    
+    }

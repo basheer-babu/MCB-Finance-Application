@@ -1,0 +1,45 @@
+<section class="my-element py-0">
+    <div class="container">
+      <div class="row h-100">
+        <div class="col-lg-5 mx-auto text-center mt-7 mb-5">
+          <h5 class="fw-bold fs-3 fs-lg-5 lh-sm">Products</h5>
+        </div>
+        <div class="col-12">
+          <div class="row h-100 align-items-center g-2">
+              <div class="col-sm-6 col-md-3 mb-3 mb-md-0 " *ngFor="let product of  products">
+                  
+                    <app-product [product]="product"></app-product>
+                    
+
+              </div>
+              <div class="col-sm-6 col-md-3 mb-3 mb-md-0 ">
+              <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img src="https://s1.freechequewriter.com/image/cheque/MauritiusCommercialBank_MCB_MV.jpg" class="img-fluid"/>
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">cheque Book</h5>
+                  <p class="card-text">MauritiusCommercialBank</p>
+                  <p class="card-text">100</p>
+                  <div class="d-flex justify-content-between">
+                  <a href="/chequebook" class="btn btn-md btn-dark">Add to Cart</a>
+                  <!-- <a href="#!" class="btn btn-md btn-dark">Delete</a> -->
+                </div>
+                </div>
+              </div>
+            </div> 
+            
+            
+          </div>
+        </div>
+        <div class="col-12 d-flex justify-content-center mt-5">
+          <a class="btn btn-lg btn-dark" href="#!">View All </a>
+        </div>
+      </div>
+    </div>
+    <!-- end of .container-->
+  </section>
+  

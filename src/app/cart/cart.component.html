@@ -1,0 +1,83 @@
+<!-- <p>My Cart </p>
+<p>{{getCart().length}}</p> -->
+
+<div class="my-element container">
+  <div *ngIf="flag==true" class="alert alert-success" role="alert">
+    Your Order Placed Successfully!
+    </div>
+  <div class="card m-2">
+    <div class="card-header bg-dark text-light d-flex justify-content-between">
+      <h5 class="fw-bold fs-3 fs-lg-5 lh-sm">Products In Cart</h5>
+      <div class="d-flex">
+        <span class="fa fa-cart-plus fa-2x me-2"></span>
+        <h5 class="fw-bold fs-3 fs-lg-5 lh-sm">{{ getCart().length }}</h5>
+      </div>
+    </div>
+    <ng-container *ngIf="getCart().length > 0">
+      <section class="py-0" style="background-color: #f5f5f5">
+        <div class="container">
+          <div class="row h-100">
+            <div class="col-12">
+              <div class="row h-100 align-items-center g-2">
+                <div
+                  class="col-sm-6 col-md-3 mb-3 mb-md-0 "
+                  *ngFor="let product of getCart()"
+                >
+                  <div class="card-body">
+                    <div class="card">
+                      <div
+                        class="bg-image hover-overlay ripple"
+                        data-mdb-ripple-color="light"
+                      >
+                        <img src="{{ product.image }}" class="img-fluid" />
+                        <a href="#!">
+                          <div
+                            class="mask"
+                            style="background-color: rgba(251, 251, 251, 0.15)"
+                          ></div>
+                        </a>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text">{{ product.description }}</p>
+                        <p class="card-text">{{ product.charge | currency }}</p>
+                        <div class="d-flex justify-content-between">
+                          <a
+                            (click)="removeToCard()"
+                            class="btn btn-sm btn-dark"
+                            >Remove from cart</a
+                          >
+
+                          <a class="btn btn-sm btn-dark">Delete</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row-12 d-flex justify-content-center mt-5">
+                <h5 class="fw-bold fs-3 fs-lg-5 lh-sm">Terms and Conditions</h5>
+
+            </div>
+                <div>
+                    <ul class="list-group list-group-flush mt-10" *ngFor="let product of getCart()">
+                        <li class="list-group-item">{{product.termsAndConditions}}</li>
+                       
+                      </ul>
+                </div>
+          </div>
+        </div>
+        <!-- end of .container-->
+      </section>
+    </ng-container>
+    <div *ngIf="getCart().length == 0" class="card-body">
+      <h3>No Items Added in Cart ...</h3>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+      <button class="btn btn-sm btn-dark">Continue to Shop</button>
+      <!-- <h5>Total Amount:{{total}}</h5> -->
+      <button (click)="checkOut()" class="btn btn-sm btn-dark">Proceed To CheckOut</button>
+    </div>
+  </div>
+</div>

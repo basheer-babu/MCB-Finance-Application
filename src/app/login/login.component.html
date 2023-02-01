@@ -1,0 +1,68 @@
+<section class="">
+  <div class="container">
+    <div class="my-element row h-100 g-0">
+      <div class="col-md-6">
+        <div class="bg-300 p-4 h-100 d-flex flex-column justify-content-center">
+          <div *ngIf="flag==1" class="alert alert-success" role="alert">
+          Login Successfull, Please Wait!
+          </div>
+          <div *ngIf="flag==2" class="alert alert-danger" role="alert">
+            Something Went Wrong!
+          </div>
+          <h4 class="text-800">Sign In</h4>
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input type="email" id="loginName" [(ngModel)]="loginBody.username" class="form-control" />
+            <label class="form-label" for="loginName">Email or username</label>
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <input type="password" id="loginPassword" [(ngModel)]="loginBody.password" class="form-control" />
+            <label class="form-label" for="loginPassword">Password</label>
+          </div>
+
+          <!-- 2 column grid layout -->
+          <div class="row mb-4">
+            <div class="col-md-6 d-flex justify-content-center">
+              <!-- Checkbox -->
+              <div class="form-check mb-3 mb-md-0">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="loginCheck"
+                  checked
+                />
+                <label class="form-check-label" for="loginCheck">
+                  Remember me
+                </label>
+              </div>
+            </div>
+
+            <div class="col-md-6 d-flex justify-content-center">
+              <!-- Simple link -->
+              <a href="#!">Forgot password?</a>
+            </div>
+          </div>
+
+          <!-- Submit button -->
+          <button type="submit" (click)="loginControl()" class="btn btn-lg btn-dark btn-block mb-4">
+            Sign in
+          </button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card card-span h-100 text-white">
+          <img class="card-img h-100" src="assets/img/Financial-Services.jpg" alt="..." />
+          <div class="card-img-overlay bg-dark-gradient">
+            <div class="d-flex align-items-end justify-content-center h-100">
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of .container-->
+</section>

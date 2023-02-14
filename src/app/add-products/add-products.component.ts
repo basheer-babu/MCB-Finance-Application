@@ -31,18 +31,11 @@ export class AddProductsComponent {
       .post<any>('http://localhost:9191/api/v1/addProduct', this.productBody, {
         headers: header,
       })
-      .subscribe(
-        (res) => {
-          console.log(res);
-
-          this.flag = 1;
-          setTimeout(() => {this.router.navigate(['products'])}, 2000); 
-          
-        },
-        (error) => {
-          console.error('error', error);
-          this.flag = 2;
-        }
-      );
+      .subscribe({
+        next: (v) => { this.flag = 1;
+          setTimeout(() => {this.router.navigate(['products'])}, 2000); },
+        error: (e) => { console.error(e); this.flag = 2 },
+        complete: () => console.info('complete')
+        });
   }
 }

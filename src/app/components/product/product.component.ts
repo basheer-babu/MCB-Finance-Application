@@ -33,22 +33,12 @@ export class ProductComponent {
     this.flag = 0;
     // let token: any = localStorage.getItem('token');
     let header = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'));
-    this.httpClient
-      .delete('http://localhost:9191/api/v1/delete/' + this.product.id, {
+    this.httpClient.delete('http://localhost:9191/api/v1/delete/' + this.product.id, {
         headers: header,
-      })
-      .subscribe(
-        (res) => {
-            console.log(res);
-            
-          setTimeout(() => {
-            window.location.reload();
-          }, 2000);
-        },
-        (error) => {
-          console.error('error', error);
-          this.flag = 2;
-        }
-      );
+    }).subscribe({
+      next: (v) => { console.log(v); window.location.reload()},
+      error: (e) => console.error(e),
+      complete: () => console.info('complete')
+    });
   }
 }

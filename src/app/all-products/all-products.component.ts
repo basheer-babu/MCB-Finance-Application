@@ -16,16 +16,13 @@ export class AllProductsComponent implements OnInit {
     let token:any=localStorage.getItem("token");
     let header = new HttpHeaders().set(
       "Authorization","Bearer "+token);
-    this.httpClient.get("http://localhost:9191/api/v1/products", {headers:header}).subscribe(res=>{
-      console.log(res);
+    this.httpClient.get("http://localhost:9191/api/v1/products", { headers: header }).subscribe({
       
-     this.products=res;
-    },
-    (error)=>{
-      console.error("error",error);
-      this.products=[];
-    })
-    
+      next: (v) => { console.log(v); this.products = v; },
+      error: (e) => console.error(e),
+      complete: () => console.info('complete')
+     
+    });
     
   }
 

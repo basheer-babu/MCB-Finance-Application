@@ -15,6 +15,8 @@ import { CartComponent } from './cart/cart.component';
 import { AddProductsComponent } from './add-products/add-products.component';
 import { FormsModule } from '@angular/forms';
 import { CartServiceService } from './service/cart-service.service';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { CartServiceService } from './service/cart-service.service';
     AllProductsComponent,
     ServiceComponent,
     CartComponent,
-    AddProductsComponent
+    AddProductsComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,

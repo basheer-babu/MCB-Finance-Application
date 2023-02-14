@@ -28,22 +28,23 @@ export class LoginComponent {
         'http://localhost:9191/api/v1/auth/authenticate',
         this.loginBody
       )
-      .subscribe(
-        (res) => {
-          console.log(res);
-          console.log(res.userRole[0].authority);
+      .subscribe( {
+          
+
+        next: (res) => { 
           localStorage.setItem('token', res.token);
           localStorage.setItem('role', res.userRole[0].authority);
           localStorage.setItem('username', this.loginBody.username);
-
           this.flag = 1;
           this.router.navigate(['products']);
-          
         },
-        (error) => {
-          console.error('error', error);
-          this.flag = 2;
-        }
-      );
+        error: (e) => { console.error(e); this.flag = 2;},
+        complete: () => console.info('complete')
+       
+          
+
+          
+          
+        });
   }
 }

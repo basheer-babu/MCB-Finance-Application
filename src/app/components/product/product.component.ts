@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
 import { CartServiceService } from 'src/app/service/cart-service.service';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-product',
@@ -30,10 +31,11 @@ export class ProductComponent {
   }
   flag: any = 0;
   deleteProduct() {
+    let url = environment.apiUrl;
     this.flag = 0;
     // let token: any = localStorage.getItem('token');
     let header = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'));
-    this.httpClient.delete('http://localhost:9191/api/v1/delete/' + this.product.id, {
+    this.httpClient.delete(url+'/delete/' + this.product.id, {
         headers: header,
     }).subscribe({
       next: (v) => { console.log(v); window.location.reload()},

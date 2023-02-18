@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { product } from '../interfaces/product';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-add-products',
@@ -24,11 +25,12 @@ export class AddProductsComponent {
   flag: number = 0;
 
   addProduct() {
+    let url = environment.apiUrl;
     this.flag = 0;
     let token: any = localStorage.getItem('token');
     let header = new HttpHeaders().set('Authorization', 'Bearer ' + token);
     this.httpClient
-      .post<any>('http://localhost:9191/api/v1/addProduct', this.productBody, {
+      .post<any>(url+'/addProduct', this.productBody, {
         headers: header,
       })
       .subscribe({

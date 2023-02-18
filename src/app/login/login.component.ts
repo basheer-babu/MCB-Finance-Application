@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-login',
@@ -21,11 +22,12 @@ export class LoginComponent {
   role: string = '';
 
   loginControl() {
+    let url = environment.apiUrl;
     this.flag = 0;
 
     this.httpClient
       .post<any>(
-        'http://localhost:9191/api/v1/auth/authenticate',
+        url+'/auth/authenticate',
         this.loginBody
       )
       .subscribe( {

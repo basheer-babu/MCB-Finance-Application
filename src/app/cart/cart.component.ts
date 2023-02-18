@@ -9,7 +9,7 @@ import { CartServiceService } from '../service/cart-service.service';
 })
 export class CartComponent {
   constructor(private cartService: CartServiceService) { }
-  total: any;
+
   @Input() product: any = [] as any;
   
   getCart(){
@@ -27,12 +27,10 @@ export class CartComponent {
     this.flag = true;
   }
   totalCount() {
-    for (let index = 0; index < this.product.length; index++) {
-      const element = this.product[index];
-      console.log(this.total);
-      
-      this.total = this.total + element.charge;
-      
+    let  total:number =0 ;
+    for (let pro of this.getCart()) {
+      total += Number(pro.charge);  
     }
+    return total;
   }
 }

@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.development';
 
@@ -8,8 +8,12 @@ import { environment } from 'src/environments/environment.development';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent {
-  constructor(private httpClient: HttpClient, private router:Router) {}
+export class LoginComponent implements OnInit {
+  constructor(private httpClient: HttpClient, private router: Router) { }
+  
+  ngOnInit(): void {
+    localStorage.clear();
+  }
 
   loginBody: any = {
     username: '',
